@@ -1,0 +1,437 @@
+.sidebar-toggle {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+  width: 32px;
+  height: 32px;
+  background: rgba(0, 0, 0, 0.8);
+  border: 2px solid white;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.sidebar-toggle.menu-open {
+  top: 16px;
+  left: 12px;
+}
+
+.sidebar-toggle:hover {
+  background: rgba(0, 0, 0, 1);
+  transform: scale(1.1);
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100dvh;
+  width: 268px;
+  background: rgba(0, 0, 0, 0.9);
+  border-right: 2px solid #fff;
+  z-index: 999;
+  transition: transform 0.3s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar.closed {
+  transform: translateX(-100%);
+}
+
+.sidebar-content {
+  padding: 76px 14px 14px;
+  color: white;
+  overflow-y: auto;
+  min-height: 0;
+  flex: 1;
+}
+
+.sidebar-content h2 {
+  margin: 0 0 14px 0;
+  font-size: 20px;
+  border-bottom: 2px solid white;
+  padding-bottom: 8px;
+}
+
+.menu-section {
+  margin-bottom: 14px;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.menu-section h3 {
+  margin: 0 0 10px 0;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #ccc;
+}
+
+.menu-section label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: white;
+  font-size: 12px;
+}
+
+.map-select {
+  width: 100%;
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid white;
+  color: white;
+  border-radius: 4px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.map-select:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.map-select:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.map-select option {
+  background: #000;
+  color: white;
+}
+
+.toggle-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+.toggle-label:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.toggle-label input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  accent-color: white;
+}
+
+.toggle-text {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+}
+
+.circle-toggles-row {
+  display: flex;
+  gap: 8px;
+  margin: 2px 0 6px;
+}
+
+.dot-toggle {
+  gap: 6px;
+  padding: 4px 6px;
+  min-width: 0;
+}
+
+.rectangle-indicator {
+  width: 15px;
+  height: 11px;
+  border-radius: 3px;
+  border: 1px solid rgba(130, 193, 255, 0.95);
+  background-color: rgba(42, 132, 235, 0.2);
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(130, 193, 255, 0.9) 0,
+    rgba(130, 193, 255, 0.9) 2px,
+    transparent 2px,
+    transparent 5px
+  );
+}
+
+.tool-group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.tool-button {
+  padding: 8px 6px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+}
+
+.tool-button.icon-only {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 0;
+}
+
+.tool-icon {
+  margin-right: 5px;
+  font-size: 11px;
+}
+
+.tool-icon-only {
+  font-size: 14px;
+  line-height: 1;
+}
+
+.tool-button:hover {
+  background: rgba(255, 255, 255, 0.16);
+  transform: translateY(-1px);
+}
+
+.tool-button.active {
+  background: rgba(255, 255, 255, 0.24);
+  border-color: rgba(255, 255, 255, 1);
+}
+
+.color-picker-row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.color-picker-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.line-color-picker {
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.line-color-swatch {
+  width: 16px;
+  height: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  border-radius: 999px;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.35);
+  flex: 0 0 auto;
+}
+
+.line-color-hex {
+  flex: 1;
+  min-width: 0;
+  padding: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.line-color-hex:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.legend-text-input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+  font-size: 12px;
+  box-sizing: border-box;
+}
+
+.legend-text-input:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.legend-editor-list {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.legend-editor-item {
+  display: grid;
+  grid-template-columns: auto auto auto 1fr auto;
+  align-items: center;
+  gap: 6px;
+  padding: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.legend-editor-item.drop-target {
+  border-color: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.legend-drag-handle {
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  cursor: grab;
+  line-height: 1;
+  user-select: none;
+}
+
+.legend-drag-handle:active {
+  cursor: grabbing;
+}
+
+.legend-editor-chip {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.legend-editor-chip-button {
+  padding: 0;
+  background: transparent;
+  cursor: copy;
+}
+
+.legend-editor-chip-button:hover {
+  transform: scale(1.15);
+}
+
+.legend-editor-kind {
+  font-size: 10px;
+  color: #d7d7d7;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.legend-editor-name-input {
+  min-width: 0;
+  width: 100%;
+  padding: 5px 7px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font-size: 12px;
+}
+
+.legend-editor-name-input:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.85);
+}
+
+.legend-remove-button {
+  padding: 2px 6px;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  cursor: pointer;
+}
+
+.legend-remove-button:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.clear-lines-button {
+  width: 100%;
+  margin-top: 6px;
+  padding: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.clear-lines-button:hover {
+  background: rgba(255, 255, 255, 0.18);
+  transform: translateY(-1px);
+}
+
+.zoom-controls {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.zoom-range {
+  width: 100%;
+  accent-color: white;
+}
+
+.circle-indicator {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.circle-indicator.red {
+  background-color: rgb(255, 0, 0);
+}
+
+.circle-indicator.blue {
+  background-color: rgb(0, 0, 255);
+}
+
+/* Scrollbar styling */
+.sidebar-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.sidebar-content::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-content::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+.sidebar-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}

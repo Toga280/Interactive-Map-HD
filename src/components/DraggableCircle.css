@@ -1,0 +1,70 @@
+.draggable-circle {
+  position: absolute;
+  width: calc(var(--circle-size, 25px) + 10px);
+  height: calc(var(--circle-size, 25px) + 10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 15;
+  user-select: none;
+}
+
+/* Main circle */
+.circle-body {
+  position: absolute;
+  width: var(--circle-size, 25px);
+  height: var(--circle-size, 25px);
+  border-radius: 50%;
+  border: 2px solid;
+  pointer-events: none;
+}
+
+.draggable-circle.red .circle-body {
+  background: rgb(255, 0, 0);
+  border-color: rgb(255, 0, 0);
+}
+
+.draggable-circle.blue .circle-body {
+  background: rgb(0, 0, 255);
+  border-color: rgb(0, 0, 255);
+}
+
+/* Right angle corner (top-left corner) */
+.right-angle {
+  position: absolute;
+  width: calc(var(--circle-size, 25px) * 0.32);
+  height: calc(var(--circle-size, 25px) * 0.32);
+  top: calc(var(--circle-size, 25px) * -0.12);
+  left: calc(var(--circle-size, 25px) * -0.12);
+  border-left: 2px solid white;
+  border-top: 2px solid white;
+  pointer-events: none;
+  transform-origin: center;
+}
+
+/* Rotation handle (small square on the right) */
+.rotate-handle {
+  position: absolute;
+  width: calc(var(--circle-size, 25px) * 0.32);
+  height: calc(var(--circle-size, 25px) * 0.32);
+  right: calc(var(--circle-size, 25px) * -0.16);
+  top: calc(var(--circle-size, 25px) * -0.16);
+  background: white;
+  border: 2px solid #333;
+  border-radius: 2px;
+  cursor: grab;
+  z-index: 20;
+  pointer-events: auto;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.draggable-circle:hover .rotate-handle {
+  opacity: 1;
+  background: #ffff00;
+}
+
+.draggable-circle.rotating .rotate-handle {
+  opacity: 1;
+  cursor: grabbing;
+}

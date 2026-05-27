@@ -1,0 +1,63 @@
+.draggable-rectangle {
+  position: absolute;
+  z-index: 14;
+  user-select: none;
+  cursor: grab;
+}
+
+.draggable-rectangle .rectangle-body {
+  position: absolute;
+  inset: 0;
+  border: 2px solid rgb(70, 140, 255);
+  border-radius: 8px;
+  background:
+    repeating-linear-gradient(
+      135deg,
+      rgba(70, 140, 255, 0.42) 0,
+      rgba(70, 140, 255, 0.42) 6px,
+      rgba(70, 140, 255, 0.12) 6px,
+      rgba(70, 140, 255, 0.12) 12px
+    );
+  box-shadow: 0 0 0 1px rgba(12, 32, 84, 0.75);
+  pointer-events: none;
+}
+
+.rectangle-rotate-handle,
+.rectangle-resize-handle {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  border: 1px solid #0f172a;
+  background: #ffffff;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.rectangle-rotate-handle {
+  left: 50%;
+  top: -10px;
+  transform: translateX(-50%);
+  cursor: grab;
+}
+
+.rectangle-resize-handle {
+  right: -8px;
+  bottom: -8px;
+  cursor: nwse-resize;
+}
+
+.draggable-rectangle:hover .rectangle-rotate-handle,
+.draggable-rectangle:hover .rectangle-resize-handle,
+.draggable-rectangle.rotating .rectangle-rotate-handle,
+.draggable-rectangle.resizing .rectangle-resize-handle {
+  opacity: 1;
+}
+
+.draggable-rectangle.rotating .rectangle-rotate-handle {
+  cursor: grabbing;
+}
+
+.draggable-rectangle.resizing .rectangle-resize-handle {
+  cursor: nwse-resize;
+}
